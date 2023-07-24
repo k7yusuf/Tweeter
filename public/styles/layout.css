@@ -6,6 +6,7 @@
 html {
   box-sizing: border-box;
 }
+
 *, *:before, *:after {
   box-sizing: inherit;
 }
@@ -13,10 +14,9 @@ html {
 /*
  * Global layout stuff
  */
-
- :root {
-  --font-primary: 'Source Sans 3', sans-serif;
-  --font-logo: 'Bungee', sans-serif;
+:root {
+  --font-primary: "Source Sans 3", sans-serif;
+  --font-logo: "Bungee", sans-serif;
   --font-fallback: sans-serif;
 }
 
@@ -27,18 +27,87 @@ body {
   font-family: var(--font-primary);
 }
 
+nav {
+  height: 120px;
+  width: 100%;
+  background-color: #4056A1;
+  color: #FFFFFF;
+  font-family: var(--font-primary);
+  padding: 0 1.5em;
+  position: fixed;
+  top: 0;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
 nav span {
   font-family: var(--font-logo);
 }
-.counter {
-  font-family:var(--font-logo) ;
+
+.compose-btn {
+  cursor: pointer;
+  padding: 8px 16px;
+  background-color: #ff0000;
+  color: #fff;
+  border-radius: 5px;
+  margin-right: 10px;
 }
 
-/*
- * Additional CSS can be defined below or in other CSS files, as per instructions
- */
- main {
+.compose-btn:hover {
+  background-color: #cc0000;
+}
+
+.scroll-to-top-btn {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #ff0000;
+  color: #fff;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  z-index: 2;
+}
+
+.scroll-to-top-btn i {
+  pointer-events: none;
+}
+
+.scroll-to-top-btn:hover {
+  background-color: #cc0000;
+}
+
+.scroll-to-top-btn-double {
+  bottom: 70px;
+  right: 20px;
+  background-color: #ff0000;
+}
+
+.scroll-to-top-btn-double i {
+  transform: rotate(180deg);
+}
+
+.scroll-to-top-btn-double:hover {
+  background-color: #cc0000;
+}
+
+.main-container {
   width: 90%;
   margin: 0 auto;
   background-color: inherit;
-} 
+}
+
+.error-message {
+  background-color: #ffcccc;
+  color: #ff0000;
+  padding: 10px;
+  margin-top: 10px;
+  border: 1px solid #ff0000;
+  border-radius: 5px;
+}

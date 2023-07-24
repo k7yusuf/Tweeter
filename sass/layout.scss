@@ -6,7 +6,6 @@
 html {
   box-sizing: border-box;
 }
-
 *, *:before, *:after {
   box-sizing: inherit;
 }
@@ -14,10 +13,10 @@ html {
 /*
  * Global layout stuff
  */
-/* Colors */
-:root {
-  --font-primary: "Source Sans 3", sans-serif;
-  --font-logo: "Bungee", sans-serif;
+
+ :root {
+  --font-primary: 'Source Sans 3', sans-serif;
+  --font-logo: 'Bungee', sans-serif;
   --font-fallback: sans-serif;
 }
 
@@ -33,7 +32,7 @@ nav {
   width: 100%;
   background-color: #4056A1;
   color: #FFFFFF;
-  font-family: "Source Sans 3", sans-serif;
+  font-family: var(--font-primary);
   padding: 0 1.5em;
   position: fixed;
   top: 0;
@@ -42,35 +41,20 @@ nav {
   align-items: center;
   justify-content: space-between;
 }
+
 nav span {
   font-family: var(--font-logo);
-}
-nav .write-tweet {
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
-}
-nav .write-tweet p {
-  margin-right: 0.5em;
-}
-nav .write-tweet i {
-  font-size: 20px;
-  margin-bottom: -4px;
-  color: #ff0000;
 }
 
 .compose-btn {
   cursor: pointer;
   padding: 8px 16px;
-  background-color: #ff0000;
+  background-color: #ff0000; 
   color: #fff;
   border-radius: 5px;
   margin-right: 10px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  /* Applying the mixin for vertical alignment */
 }
+
 .compose-btn:hover {
   background-color: #cc0000;
 }
@@ -79,7 +63,7 @@ nav .write-tweet i {
   position: fixed;
   bottom: 20px;
   right: 20px;
-  background-color: #ff0000;
+  background-color: #ff0000; 
   color: #fff;
   width: 40px;
   height: 40px;
@@ -90,10 +74,26 @@ nav .write-tweet i {
   cursor: pointer;
   z-index: 2;
 }
+
 .scroll-to-top-btn i {
   pointer-events: none;
 }
+
 .scroll-to-top-btn:hover {
+  background-color: #cc0000;
+}
+
+.scroll-to-top-btn-double {
+  bottom: 70px;
+  right: 20px;
+  background-color: #ff0000; 
+}
+
+.scroll-to-top-btn-double i {
+  transform: rotate(180deg);
+}
+
+.scroll-to-top-btn-double:hover {
   background-color: #cc0000;
 }
 
@@ -110,56 +110,4 @@ nav .write-tweet i {
   margin-top: 10px;
   border: 1px solid #ff0000;
   border-radius: 5px;
-}
-
-/* Mobile Styles */
-body {
-  font-size: 30px;
-}
-
-.tagline {
-  display: none;
-}
-
-/* Tablet Styles */
-@media only screen and (min-width: 768px) {
-  .feature {
-    width: 33.3%;
-    line-height: 600px;
-  }
-  .feature .content {
-    width: 66.7%;
-    float: right;
-  }
-  .feature .footer {
-    clear: right;
-  }
-}
-/* Desktop styles */
-@media only screen and (min-width: 1024px) {
-  .hero {
-    width: 33.3%;
-    float: left;
-  }
-  .feature {
-    line-height: 300px;
-  }
-  .menu {
-    background-color: #111111;
-    color: #f0f0f0;
-    text-align: left;
-  }
-  .tagline {
-    display: inline;
-    font-style: italic;
-    font-weight: normal;
-    font-size: 12px;
-    color: tomato;
-    float: right;
-  }
-  .main {
-    max-width: 1024px;
-    font-size: 16px;
-    margin: 0 auto;
-  }
 }
