@@ -1,5 +1,12 @@
- const createTweetElement = function(tweet) {
-  const $tweet = $(`
+$(document).ready(function () {
+  const createTweetElement = function (tweet) {
+    // Function to escape text to prevent XSS
+    const escape = function (str) {
+      let div = document.createElement("div");
+      div.appendChild(document.createTextNode(str));
+      return div.innerHTML;
+    };
+    const $tweet = $(`
     <article class="tweet">
       <header class="tweet-header">
         <img class="avatar" src="${tweet.user.avatars}" alt="User Avatar">
@@ -20,23 +27,41 @@
     </article>
   `);
 
-  return $tweet;
-};
+    return $tweet;
+  };
 
-$(document).ready(function() { 
-  // Function to escape text to prevent XSS
-const escape = function(str) {
-  let div = document.createElement("div");
-  div.appendChild(document.createTextNode(str));
-  return div.innerHTML;
-};
+//create tweet function ends
+  const renderTweets = function (tweets) {
+    // Empty the container before rendering tweets
+    $('#tweets-container').empty();
+
+    for (const tweet of tweets) {
+      const $tweet = createTweetElement(tweet);
+      $('#tweets-container').prepend($tweet);
+    }
+  };
+
+  const loadTweets = function () {
+    $.ajax({
+      url: '/tweets',
+      method: 'GET',
+      dataType: 'json',
+      success: function (data) {
+        renderTweets(data);
+      },
+      error: function (err) {
+        console.log('Error fetching tweets:', err);
+      }
+    });
+  };
+
 
   // Function to toggle new-tweet section
-  const toggleNewTweet = function() {
+  const toggleNewTweet = function () {
     const $newTweetSection = $('.new-tweet');
 
     // Slide up the new-tweet section before toggling
-    $newTweetSection.slideToggle(function() {
+    $newTweetSection.slideToggle(function () {
       if ($newTweetSection.is(':visible')) {
         // Show textarea and focus on it
         $('#tweet-text').focus();
@@ -52,45 +77,21 @@ const escape = function(str) {
   // Attach click event to the "Write a new tweet" div
   $('.write-tweet').click(toggleNewTweet);
 
-   //create tweet function ends
-  const renderTweets = function(tweets) {
-    // Empty the container before rendering tweets
-    $('#tweets-container').empty();
-
-    for (const tweet of tweets) {
-      const $tweet = createTweetElement(tweet);
-      $('#tweets-container').prepend($tweet);
-    }
-  };
-
-  const loadTweets = function() {
-    $.ajax({
-      url: '/tweets',
-      method: 'GET',
-      dataType: 'json',
-      success: function(data) {
-        renderTweets(data);
-      },
-      error: function(err) {
-        console.log('Error fetching tweets:', err);
-      }
-    });
-  };
 
   // Function to display error messages
-  const showError = function(message) {
+  const showError = function (message) {
     const $errorMessage = $('.error-message');
     $errorMessage.text(message);
     $errorMessage.slideDown();
   };
 
   // Function to hide error messages
-  const hideError = function() {
+  const hideError = function () {
     $('.error-message').hide();
   };
 
   // Validate form before submitting
-  $('#tweet-form').submit(function(event) {
+  $('#tweet-form').submit(function (event) {
     event.preventDefault();
     hideError();
 
@@ -107,12 +108,12 @@ const escape = function(str) {
         url: '/tweets',
         method: 'POST',
         data: $(this).serialize(),
-        success: function() {
+        success: function () {
           // Clear the textarea and reload tweets on successful submission
           $('#tweet-text').val('');
           loadTweets();
         },
-        error: function(err) {
+        error: function (err) {
           console.log('Error posting tweet:', err);
         }
       });
@@ -122,4 +123,3 @@ const escape = function(str) {
   // Load tweets on page load
   loadTweets();
 });
-module.export= createTweetElement;

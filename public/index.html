@@ -1,77 +1,82 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <!-- Meta Information -->
-    <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0' />
-    <title>Tweeter - Home Page</title>
 
-    <!-- External CSS -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Bungee&family=Source+Sans+3:ital,wght@0,300;0,600;1,300&display=swap" rel="stylesheet">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/timeago.js/4.0.2/timeago.min.js"></script>
+<head>
+  <!-- Meta Information -->
+  <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0' />
+  <title>Tweeter - Home Page</title>
 
-    <!-- App CSS -->
-    <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
-    <link rel="stylesheet" href="/styles/nav.css" type="text/css" />
-    <link rel="stylesheet" href="/styles/header.css" type="text/css" />
-    <link rel="stylesheet" href="/styles/new-tweet.css" type="text/css" />
+  <!-- External CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
 
+  <!-- External-font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Bungee&family=Source+Sans+3:ital,wght@0,300;0,600;1,300&display=swap"
+    rel="stylesheet">
 
-    <!-- External JS -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <!-- App CSS -->
+  <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
+  <link rel="stylesheet" href="/styles/nav.css" type="text/css" />
+  <link rel="stylesheet" href="/styles/header.css" type="text/css" />
+  <link rel="stylesheet" href="/styles/new-tweet.css" type="text/css" />
 
-    <!-- App JS -->
-    <script type="text/javascript" src="/scripts/client.js"></script>
-    <script type="text/javascript" src="/scripts/composer-char-counter.js"></script>
-    <script type="text/javascript" src="scripts/composer.js"></script>
-  </head>
+  <!-- External JS -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/timeago.js/4.0.2/timeago.min.js"></script>
 
-  <body>
-    <!-- Top nav bar (fixed) -->
-    <nav>
-      <div class="logo">
-        <span>tweeter</span>
-      </div>
-      <div class="write-tweet">
-        <p><strong>Write</strong> a new tweet</p>
-        <i class="fas fa-angle-double-down" style="color: #ff0000;"></i>
-      </div>
-    </nav>
-<!-- 2-column layout for Desktop -->
-<div class="desktop-layout">
-  <!-- Left column for header -->
-  <section class="hero">
-    <header class="profile-header">
-      <div>
-        <img src="/images/profile-hex.png" alt="Avatar">
-      </div>
-      <br>
-      <div>
-        <h2>Your Name</h2>
-      </div>
-    </header>
-  </section>
-      <!-- Page-specific (main) content here -->
-<main class="container">
-    <section class="new-tweet">
-      <h2>Compose Tweet</h2>
-      <div class="error-message" style="display: none;"></div>
-      <form id="tweet-form" action="/tweets" method="POST">
-        <label for="tweet-text">What are you humming about?</label>
-        <textarea name="text" id="tweet-text"></textarea>
+  <!-- App JS -->
+  <script type="text/javascript" src="/scripts/client.js"></script>
+  <script type="text/javascript" src="/scripts/composer-char-counter.js"></script>
+  <script type="text/javascript" src="/scripts/scroller.js"></script>
+</head>
+
+<body>
+  <!-- Top nav bar (fixed) -->
+  <nav>
+    <div class="logo">
+      <span>tweeter</span>
+    </div>
+    <div class="write-tweet">
+      <p><strong>Write</strong> a new tweet</p>
+      <i class="fas fa-angle-double-down" style="color: #ff0000;"></i>
+    </div>
+  </nav>
+  <!-- 2-column layout for Desktop -->
+  <div class="desktop-layout">
+    <!-- Left column for header -->
+    <section class="hero">
+      <header class="profile-header">
         <div>
-          <button type="submit">Tweet</button>
-          <output name="counter" class="counter" for="tweet-text">140</output>
+          <img src="/images/profile-hex.png" alt="Avatar">
         </div>
-      </form>
+        <br>
+        <div>
+          <h2>Your Name</h2>
+        </div>
+      </header>
     </section>
-    <section id="tweets-container"></section>
-  </main>
+    <!-- Page-specific (main) content here -->
+    <main class="container">
+      <section class="new-tweet">
+        <h2>Compose Tweet</h2>
+        <div class="error-message" style="display: none;"></div>
+        <form id="tweet-form" action="/tweets" method="POST">
+          <label for="tweet-text">What are you humming about?</label>
+          <textarea name="text" id="tweet-text"></textarea>
+          <div>
+            <button type="submit">Tweet</button>
+            <output name="counter" class="counter" for="tweet-text">140</output>
+          </div>
+        </form>
+      </section>
+      <section id="tweets-container"></section>
+    </main>
   </div>
-    <!-- <div class="scroll-to-top-btn">
+  <!-- <div class="scroll-to-top-btn">
       <i class="fas fa-angle-double-up" style="color: #ff0000;"></i>
     </div> -->
-  </body>
+</body>
+
 </html>
