@@ -54,6 +54,9 @@ const escape = function(str) {
 
    //create tweet function ends
   const renderTweets = function(tweets) {
+    // Empty the container before rendering tweets
+    $('#tweets-container').empty();
+
     for (const tweet of tweets) {
       const $tweet = createTweetElement(tweet);
       $('#tweets-container').prepend($tweet);
