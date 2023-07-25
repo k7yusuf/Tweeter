@@ -1,3 +1,28 @@
+ const createTweetElement = function(tweet) {
+  const $tweet = $(`
+    <article class="tweet">
+      <header class="tweet-header">
+        <img class="avatar" src="${tweet.user.avatars}" alt="User Avatar">
+        <h4 class="tweet-author">${tweet.user.name}</h4>
+        <span class="tweet-handle">${tweet.user.handle}</span>
+      </header>
+      <div class="tweet-content">
+        <p class="tweet-text">${escape(tweet.content.text)}</p>
+      </div>
+      <footer class="tweet-footer">
+        <span class="tweet-timestamp">${timeago.format(tweet.created_at)}</span>
+        <div class="tweet-icons">
+          <i class="fas fa-flag"></i>
+          <i class="fas fa-retweet"></i>
+          <i class="fas fa-heart"></i>
+        </div>
+      </footer>
+    </article>
+  `);
+
+  return $tweet;
+};
+
 $(document).ready(function() { 
   // Function to escape text to prevent XSS
 const escape = function(str) {
@@ -5,30 +30,6 @@ const escape = function(str) {
   div.appendChild(document.createTextNode(str));
   return div.innerHTML;
 };
-const createTweetElement = function(tweet) {
-      const $tweet = $(`
-        <article class="tweet">
-          <header class="tweet-header">
-            <img class="avatar" src="${tweet.user.avatars}" alt="User Avatar">
-            <h4 class="tweet-author">${tweet.user.name}</h4>
-            <span class="tweet-handle">${tweet.user.handle}</span>
-          </header>
-          <div class="tweet-content">
-            <p class="tweet-text">${escape(tweet.content.text)}</p>
-          </div>
-          <footer class="tweet-footer">
-            <span class="tweet-timestamp">${timeago.format(tweet.created_at)}</span>
-            <div class="tweet-icons">
-              <i class="fas fa-flag"></i>
-              <i class="fas fa-retweet"></i>
-              <i class="fas fa-heart"></i>
-            </div>
-          </footer>
-        </article>
-      `);
-    
-      return $tweet;
-    };
 
   // Function to toggle new-tweet section
   const toggleNewTweet = function() {
@@ -118,3 +119,4 @@ const createTweetElement = function(tweet) {
   // Load tweets on page load
   loadTweets();
 });
+module.export= createTweetElement;
