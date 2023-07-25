@@ -37,7 +37,7 @@ nav {
   padding: 0 1.5em;
   position: fixed;
   top: 0;
-  z-index: 1;
+  z-index: 2;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -135,31 +135,54 @@ body {
     clear: right;
   }
 }
+
 /* Desktop styles */
 @media only screen and (min-width: 1024px) {
-  .hero {
-    width: 33.3%;
-    float: left;
+  /* Create a two-column layout */
+  .profile-header {
+    width: 200px; /* Adjust this value based on your design */
+    float: left; /* Float the header to the left */
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    background-color: #f4f1ec;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
   }
-  .feature {
-    line-height: 300px;
+
+  .main-container {
+    width: calc(100% - 200px); /* Adjust the width to account for the 200px width of the profile header */
+    margin-left: 200px; /* Keep the margin-left to create spacing between columns */
+    background-color: inherit;
+    padding: 1rem; /* Add padding to match the padding used in .profile-header */
   }
-  .menu {
-    background-color: #111111;
-    color: #f0f0f0;
-    text-align: left;
+
+  /* Additional styling for individual tweets */
+  .tweet {
+    /* Add styles to create a box around each tweet */
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+    margin-bottom: 10px;
+    background-color: #fff;
+    /* Adjust the width to fit the remaining space in the main container */
+    width: calc(100% - 220px);
   }
-  .tagline {
-    display: inline;
-    font-style: italic;
-    font-weight: normal;
-    font-size: 12px;
-    color: tomato;
-    float: right;
+  
+  .tweet-content {
+    /* Prevent tweet content from overflowing */
+    word-wrap: break-word;
   }
-  .main {
-    max-width: 1024px;
-    font-size: 16px;
-    margin: 0 auto;
+  
+  .tweet-handle {
+    /* Position the handle on the top right of the tweet */
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    color: #888;
   }
 }
