@@ -112,77 +112,27 @@ nav .write-tweet i {
   border-radius: 5px;
 }
 
-/* Mobile Styles */
-body {
-  font-size: 30px;
+/* Additional styling for individual tweets */
+.tweet {
+  /* Add styles to create a box around each tweet */
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 10px;
+  margin-bottom: 10px;
+  background-color: #fff;
+  /* Adjust the width to fit the remaining space in the main container */
+  width: calc(100% - 220px);
 }
 
-.tagline {
-  display: none;
+.tweet-content {
+  /* Prevent tweet content from overflowing */
+  word-wrap: break-word;
 }
 
-/* Tablet Styles */
-@media only screen and (min-width: 768px) {
-  .feature {
-    width: 33.3%;
-    line-height: 600px;
-  }
-  .feature .content {
-    width: 66.7%;
-    float: right;
-  }
-  .feature .footer {
-    clear: right;
-  }
-}
-
-/* Desktop styles */
-@media only screen and (min-width: 1024px) {
-  /* Create a two-column layout */
-  .profile-header {
-    width: 200px; /* Adjust this value based on your design */
-    float: left; /* Float the header to the left */
-    position: fixed;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    background-color: #f4f1ec;
-    padding: 1rem;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-  }
-
-  .main-container {
-    width: calc(100% - 200px); /* Adjust the width to account for the 200px width of the profile header */
-    margin-left: 200px; /* Keep the margin-left to create spacing between columns */
-    background-color: inherit;
-    padding: 1rem; /* Add padding to match the padding used in .profile-header */
-  }
-
-  /* Additional styling for individual tweets */
-  .tweet {
-    /* Add styles to create a box around each tweet */
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    padding: 10px;
-    margin-bottom: 10px;
-    background-color: #fff;
-    /* Adjust the width to fit the remaining space in the main container */
-    width: calc(100% - 220px);
-  }
-  
-  .tweet-content {
-    /* Prevent tweet content from overflowing */
-    word-wrap: break-word;
-  }
-  
-  .tweet-handle {
-    /* Position the handle on the top right of the tweet */
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    color: #888;
-  }
+.tweet-handle {
+  /* Position the handle on the top right of the tweet */
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  color: #888;
 }

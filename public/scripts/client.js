@@ -111,7 +111,11 @@ $(document).ready(function () {
         success: function () {
           // Clear the textarea and reload tweets on successful submission
           $('#tweet-text').val('');
-          loadTweets();
+
+          // Reset the character counter to 140
+        $('#counter').text('140');
+        
+        loadTweets();
         },
         error: function (err) {
           console.log('Error posting tweet:', err);
