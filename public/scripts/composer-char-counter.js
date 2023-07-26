@@ -1,16 +1,16 @@
 $(document).ready(function() {
-  const $tweetText = $('#tweet-text');
+  const tweetMaxLength = 140; // Change this to your desired character limit
 
-  $tweetText.on('input', function() {
-    const remainingChars = 140 - $(this).val().length;
+  $("#tweet-text").on("input", function() {
+    const remainingChars = tweetMaxLength - $(this).val().length;
     const $counter = $('.counter');
     $counter.text(remainingChars);
 
+    // Add or remove the 'limit-exceeded' class based on the character count
     if (remainingChars < 0) {
-      $counter.addClass('invalid');
+      $counter.addClass('limit-exceeded');
     } else {
-      $counter.removeClass('invalid');
+      $counter.removeClass('limit-exceeded');
     }
   });
 });
-

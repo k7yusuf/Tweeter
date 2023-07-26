@@ -118,29 +118,11 @@
 .tweet:hover .tweet-icons i {
   color: #1da1f2;
 }
+.counter {
+  float: right;
+  color: #545149;
+}
 
-      /* Additional styling for individual tweets */
-      .tweet {
-        /* Add styles to create a box around each tweet */
-        border: 1px solid #ccc;
-        border-radius: 5px;
-        padding: 10px;
-        margin-bottom: 10px;
-        background-color: #fff;
-        /* Adjust the width to fit the remaining space in the main container */
-        width: calc(100% - 220px);
-      }
-      
-      .tweet-content {
-        /* Prevent tweet content from overflowing */
-        word-wrap: break-word;
-      }
-      
-      .tweet-handle {
-        /* Position the handle on the top right of the tweet */
-        position: absolute;
-        top: 10px;
-        right: 10px;
-        color: #888;
-      }
-    
+.counter.limit-exceeded {
+  color: red;
+}
