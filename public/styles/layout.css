@@ -28,148 +28,42 @@ body {
   margin: 0;
 }
 
-nav {
-  height: 120px;
-  width: 100%;
-  background-color: #4056A1;
-  color: #FFFFFF;
-  font-family: var(--font-primary);
-  padding: 0 1.5em;
-  position: fixed;
-  top: 0;
-  z-index: 1;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
 
-nav span {
-  font-family: var(--font-logo);
-}
 
-.compose-btn {
-  cursor: pointer;
-  padding: 8px 16px;
-  background-color: #ff0000;
-  color: #fff;
-  border-radius: 5px;
-  margin-right: 10px;
-}
-
-.compose-btn:hover {
-  background-color: #cc0000;
-}
-
-.scroll-to-top-btn {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  background-color: #ff0000;
-  color: #fff;
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  cursor: pointer;
-  z-index: 2;
-}
-
-.scroll-to-top-btn i {
-  pointer-events: none;
-}
-
-.scroll-to-top-btn:hover {
-  background-color: #cc0000;
-}
-
-.scroll-to-top-btn-double {
-  bottom: 70px;
-  right: 20px;
-  background-color: #ff0000;
-}
-
-.scroll-to-top-btn-double i {
-  transform: rotate(180deg);
-}
-
-.scroll-to-top-btn-double:hover {
-  background-color: #cc0000;
-}
-
-.main-container {
+.container {
   width: 90%;
   margin: 0 auto;
   background-color: inherit;
 }
 
-.error-message {
+/* .error-message {
   background-color: #ffcccc;
   color: #ff0000;
   padding: 10px;
   margin-top: 10px;
   border: 1px solid #ff0000;
   border-radius: 5px;
-}
+} */
 
-.avatar {
-  width: 40px; /* Adjust the width as needed */
-  height: 40px; /* Adjust the height as needed */
-  border-radius: 50%;
-  margin-right: 10px;
-}
 
-.name {
-  margin: 0;
-}
 
-.tweet {
-  position: relative; 
-}
 
 /* Mobile Styles */
 body {
   font-size: 30px;
 }
 
-.tagline {
-  display: none;
-}
-
-/* Tablet Styles */
-@media only screen and (min-width: 768px) {
-  .feature {
-    width: 33.3%;
-    line-height: 600px;
-  }
-  .feature .content {
-    width: 66.7%;
-    float: right;
-  }
-  .feature .footer {
-    clear: right;
-  }
-}
-
-
 /* Desktop styles */
 @media only screen and (min-width: 1024px) {
-  /* Create a two-column layout */
-  .desktop-layout {
-    display: flex;
-    margin-top: 10rem;
-}
-  }
-  .left-column {
-    width: 30%;
-    background-color: #f4f1ec;
-    
-  }
+body {
 
-  .right-column {
-    width: 70% ; 
-    margin-left: 10px;
-    background-color: inherit;
-    padding: 1rem; 
-  }
+  display: flex;
+}
+
+.container {
+  margin-top: 4em;
+  margin-right: 2em;
+}
+
+
+}
