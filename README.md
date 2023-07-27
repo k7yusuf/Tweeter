@@ -13,9 +13,9 @@ This repository is the starter code for the project: Students will fork and clon
 4. Go to <http://localhost:8080/> in your browser.
 
 ## Screenshots
-!["Counter slot exceeded"](docs/Screenshot 2023-07-27 at 4.40.03 PM.png)
-!["Desktop layout"](docs/Screenshot 2023-07-27 at 4.40.38 PM.png)
-!["Counter slot when typing"](docs/Screenshot 2023-07-27 at 4.40.11 PM.png)
+![Counter slot exceeded](docs/counter-exceeded.png)
+![Desktop layout](docs/desktop-layout.png)
+![Counter slot when typing](docs/counter-typing.png)
 
 ## Dependencies
 
