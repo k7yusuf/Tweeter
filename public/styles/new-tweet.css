@@ -97,6 +97,7 @@
 
 .tweet-content {
   margin-top: 10px;
+  word-break: break-word; 
 }
 
 .tweet-text {
