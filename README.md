@@ -12,7 +12,13 @@ This repository is the starter code for the project: Students will fork and clon
 3. Start the web server using the `npm run local` command. The app will be served at <http://localhost:8080/>.
 4. Go to <http://localhost:8080/> in your browser.
 
+## Screenshots
+!["Counter slot exceeded"](docs/Screenshot 2023-07-27 at 4.40.03 PM.png)
+!["Desktop layout"](docs/Screenshot 2023-07-27 at 4.40.38 PM.png)
+!["Counter slot when typing"](docs/Screenshot 2023-07-27 at 4.40.11 PM.png)
+
 ## Dependencies
 
 - Express
 - Node 5.10.x or above
+
