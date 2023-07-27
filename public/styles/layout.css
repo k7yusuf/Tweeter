@@ -123,9 +123,8 @@ nav span {
   margin: 0;
 }
 
-.tweet-handle {
-  margin: 0;
-  color: #888;
+.tweet {
+  position: relative; 
 }
 
 /* Mobile Styles */
@@ -152,27 +151,32 @@ body {
   }
 }
 
+
 /* Desktop styles */
 @media only screen and (min-width: 1024px) {
   /* Create a two-column layout */
-  .profile-header {
-    width: 200px; /* Adjust this value based on your design */
-    float: left; /* Float the header to the left */
-    top: 0;
-    left: 0;
-    bottom: 0;
+  .desktop-layout {
+    display: flex;
+    margin-top: 10rem;
+}
+  }
+  .left-column {
+    width: 30%; /* Adjust this value based on your design */
+    /* float: left; Float the header to the left */
+    /* top: 0;
+    left: 0; */
+    /* bottom: 0; */
     background-color: #f4f1ec;
-    padding: 1rem;
+    /* padding: 1rem;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
+    justify-content: center; */
   }
 
-  .main-container {
-    width: calc(100% - 200px); /* Adjust the width to account for the 200px width of the profile header */
-    margin-left: 200px; /* Keep the margin-left to create spacing between columns */
+  .right-column {
+    width: 70% ; 
+    margin-left: 10px;
     background-color: inherit;
-    padding: 1rem; /* Add padding to match the padding used in .profile-header */
+    padding: 1rem; /* Add padding to match the padding used in .left-column */
   }
-}

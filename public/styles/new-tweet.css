@@ -69,6 +69,7 @@
 .tweet-header {
   display: flex;
   align-items: center;
+  justify-content: space-between;
 }
 
 .tweet-header img.avatar {
@@ -76,6 +77,11 @@
   height: 50px;
   border-radius: 50%;
   margin-right: 10px;
+}
+.tweet-header-left {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .tweet-author {
@@ -122,7 +128,10 @@
   box-shadow: 0px 0px 5px #aaa;
 }
 
-/* Add hover effect to the action icons inside tweet-1 */
-.tweet:hover .tweet-icons i {
+.tweet-icons i:hover {
   color: #1da1f2;
+}
+
+.tweet:hover {
+  box-shadow: 0px 0px 5px #aaa;
 }

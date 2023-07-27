@@ -6,44 +6,6 @@
   justify-content: center;
 }
 
-/*
- * http://www.paulirish.com/2012/box-sizing-border-box-ftw/
- * https://css-tricks.com/international-box-sizing-awareness-day/
- * Do not modify these two selectors, please
- */
-html {
-  box-sizing: border-box;
-}
-
-*, *:before, *:after {
-  box-sizing: inherit;
-}
-
-/*
- * Global layout stuff
- */
-
-/* Colors */
-$color-primary: #4056A1;
-$color-secondary: #ff0000;
-$color-background: #f4f1ec;
-$color-text: #545149;
-$color-error: #ff0000;
-$color-error-background: #ffcccc;
-
-:root {
-  --font-primary: 'Source Sans 3', sans-serif;
-  --font-logo: 'Bungee', sans-serif;
-  --font-fallback: sans-serif;
-}
-
-body {
-  color: #545149;
-  background-color: #f4f1ec;
-  font-size: 24px;
-  font-family: var(--font-primary);
-}
-
 nav {
   height: 120px;
   width: 100%;

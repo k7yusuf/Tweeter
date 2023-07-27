@@ -9,8 +9,10 @@ $(document).ready(function () {
     const $tweet = $(`
     <article class="tweet">
       <header class="tweet-header">
+        <div class="tweet-header-left"> 
         <img class="avatar" src="${tweet.user.avatars}" alt="User Avatar">
         <h4 class="tweet-author">${tweet.user.name}</h4>
+        </div>
         <span class="tweet-handle">${tweet.user.handle}</span>
       </header>
       <div class="tweet-content">
@@ -113,7 +115,7 @@ $(document).ready(function () {
           $('#tweet-text').val('');
 
           // Reset the character counter to 140
-        $('#counter').text('140');
+        $('.counter').text('140');
         
         loadTweets();
         },
